@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <button class="menu-toggle">☰</button>
+        <aside class="sidebar">
+            <h2 class="logo">Qur<span>an</span></h2>
+            <nav>
+                <ul>
+                    <li class="active"><a href="#">🏠 Home</a></li>
+                    <li><a href="/about.html">👤 About</a></li>
+                    <li><a href="#">📋 Services</a></li>
+                    <li><a href="/index.html">💼 Portfolio</a></li>
+                    <li><a href="contact.html">📞 Contact</a></li>
+                </ul>
+            </nav>
+        </aside>
+        
+        <!-- Main Content -->
+        
+        <main class="content">
+            <div class="hero">
+                <div class="info">
+                    <h1>Hello, my name is <span class="name">Muhammad Usman</span></h1>
+                    <h2>I'm a <span class="highlight" id="typewriter"></span></h2> <!-- Typewriter effect here -->
+                    <p>I'm Hafiz and teacher of Quran with extensive experience for over 10 years. 
+                        My expertise is to teach Quran, and many more...</p>
+                    <a href="/about.html" class="btn">More About Me</a>
+                </div>
+                <div class="profile-image">
+                    <img src="profile.jpg" alt="Profile">
+                    <div class="corner-box"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        const textElement = document.getElementById("typewriter");
+        const texts = [" teacher ", "Expert of teaching "];
+        let textIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+
+        function typeEffect() {
+            let currentText = texts[textIndex];
+
+            if (isDeleting) {
+                textElement.innerText = currentText.substring(0, charIndex--);
+            } else {
+                textElement.innerText = currentText.substring(0, charIndex++);
+            }
+
+            let speed = isDeleting ? 50 : 100;
+
+            if (!isDeleting && charIndex === currentText.length) {
+                if (textIndex === 1) return; // Stop after "Expert of teaching"
+                speed = 1000;
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                textIndex++;
+                speed = 500;
+            }
+
+            setTimeout(typeEffect, speed);
+        }
+
+        document.addEventListener("DOMContentLoaded", typeEffect);
+    </script>
+</body>
+</html>

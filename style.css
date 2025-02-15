@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #d3d3d3;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    background: black;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    left: 70px;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    background: #f0f0f0;
+}
+
+.sidebar {
+    width: 280px;
+    background: #fff;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    box-shadow: 5px 0px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.sidebar .logo {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+.sidebar .logo span {
+    color: red;
+}
+
+.sidebar ul {
+    list-style: none;
+    width: 100%;
+}
+
+.sidebar ul li {
+    padding: 15px 0;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+}
+
+.sidebar ul li.active a {
+    color: red;
+    font-weight: bold;
+}
+
+.content {
+    flex: 1;
+    padding: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.hero .info {
+    max-width: 500px;
+}
+
+.hero h1 {
+    font-size: 36px;
+    font-weight: 600;
+}
+
+.hero .name {
+    color: red;
+    font-style: italic;
+}
+
+.hero h2 {
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.hero .highlight {
+    color: red;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #666;
+    margin: 20px 0;
+}
+
+.hero .btn {
+    display: inline-block;
+    background: red;
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.hero .btn:hover {
+    background: darkred;
+}
+
+.profile-image {
+    position: relative;
+    width: 280px;
+    height: 350px;
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.corner-box {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    width: 50px;
+    height: 50px;
+    border-top: 4px solid red;
+    border-right: 4px solid red;
+}
+
+.corner-box::after {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: -15px;
+    width: 50px;
+    height: 50px;
+    border-bottom: 4px solid red;
+    border-left: 4px solid red;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .content {
+        padding: 40px;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .hero {
+        flex-direction: column;
+    }
+    
+    .profile-image {
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+    
+    .sidebar {
+        position: fixed;
+        left: -100%;
+        top: 0;
+        width: 250px;
+        height: 100%;
+        background: white;
+        padding: 20px;
+        transition: left 0.3s ease-in-out;
+    }
+    
+    .sidebar.active {
+        left: 0;
+    }
+    
+    .content {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 28px;
+    }
+    
+    .hero h2 {
+        font-size: 24px;
+    }
+    
+    .hero p {
+        font-size: 16px;
+    }
+    
+    .hero .btn {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+}

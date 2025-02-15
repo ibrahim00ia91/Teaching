@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <link rel="stylesheet" href="style.css"> <!-- Use the same CSS file -->
+    <style>
+        .header {
+            width: 100%;
+            background: #fff;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+        .header .logo {
+            font-size: 26px;
+            font-weight: bold;
+            color: black;
+        }
+        .header .logo span {
+            color: red;
+        }
+        .header nav ul {
+            list-style: none;
+            display: flex;
+        }
+        .header nav ul li {
+            margin-left: 20px;
+        }
+        .header nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 18px;
+            font-weight: 500;
+        }
+        .about-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 120px 80px 80px; /* Adjusted padding for fixed header */
+            background: #f9f9f9;
+        }
+        .about-container h1 {
+            font-size: 42px;
+            color: red;
+            margin-bottom: 20px;
+        }
+        .about-container p {
+            font-size: 18px;
+            color: #444;
+            max-width: 800px;
+            line-height: 1.6;
+        }
+        .about-image {
+            margin-top: 30px;
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            background: red;
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            background: darkred;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+    .header {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background: #fff;
+        z-index: 1000;
+        padding: 15px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .menu-toggle {
+        display: block;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    .header nav ul {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        position: absolute;
+        font-weight: bold;
+        top: 60px;
+        left: 3px;
+        right: 0;
+        width: 100%;
+        background: white;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    .header nav ul li {
+        margin: 10px 0;
+    }
+
+    .header nav ul.show {
+        display: flex;
+    }
+
+    .about-container {
+        padding: 17px 44px;
+        margin-top: 900px; /* Adjust content padding so it doesn't overlap */
+    }
+}
+
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h2 class="logo">Qur<span>an</span></h2>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="/index.html">Portfolio</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="about-container" style="padding-top: 700px;">
+        <h1>About Me</h1>
+        <div class="about-image">
+            <img src="profile.jpg" alt="Profile">
+        </div>
+        <p>Welcome to my official educational website! I am Muhammad Usman, a passionate Quran teacher, Islamic scholar, motivational speaker, and mosque Imam & Khatib, with over nine years of physical teaching experience. My goal is to provide authentic Islamic education and inspire individuals to develop a strong connection with their faith.</p>
+        <p>I have devoted my life to the service of Islam by teaching the Quran with Tajweed, delivering in-depth Islamic lectures, and motivating people to follow the righteous path. As an Islamic scholar, I specialize in Tafsir (exegesis), Hadith studies, Fiqh (Islamic jurisprudence), and classical Arabic sciences. My experience as an Imam and Khatib has allowed me to engage deeply with communities, guiding them on various religious and social matters.</p>
+        <p>On this platform, you will find a variety of educational resources and courses, designed for learners of all levels. Whether you are a beginner or an advanced student of Islam, my courses will help you:</p>
+        <ul>
+            <li>✅ Master Quranic recitation with proper Tajweed</li>
+            <li>✅ Understand the meanings of the Quran through Tafsir</li>
+            <li>✅ Learn essential Islamic teachings based on authentic sources</li>
+            <li>✅ Develop a strong foundation in Arabic and Islamic studies</li>
+            <li>✅ Gain motivation and spiritual upliftment through inspirational talks</li>
+        </ul>
+        <p>I believe that Islamic knowledge is a guiding light that leads to success in this life and the Hereafter. Therefore, my approach is not just about academic learning but also about applying Islamic principles in daily life.</p>
+        <a href="index.html" class="btn">Back to Home</a>
+    </div>
+</body>
+</html>
